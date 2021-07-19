@@ -1,5 +1,5 @@
 # tiny_shell
-A functional shell for practicing.
+A functional shell just for fun and practicing.
 
 The development is in schedule.
 
