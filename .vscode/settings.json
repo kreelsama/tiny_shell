@@ -2,5 +2,9 @@
     "[makefile]": {
         "editor.insertSpaces": false,
         "editor.detectIndentation": false
+    },
+    "files.associations": {
+        "common.h": "c",
+        "history.h": "c"
     }
 }
