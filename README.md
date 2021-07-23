@@ -11,3 +11,4 @@ The development is in schedule.
 * Input/Output redirect using "<", ">", "&", "|" symbols. 
 * Pass signals to the running programs with Ctrl+C and etc.
 * History supports.
+* Subcommand wrappers ('$') and escape characters ('\')
