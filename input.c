@@ -4,8 +4,9 @@
 #include "common.h"
 
 // to do
-char * process_PS1(const char *pattern){
-    return pattern;
+size_t process_PS1(const char *pattern, char* PS){
+    strncpy(PS, pattern, MAX_PMT_SIZE);
+    return strlen(PS);
 }
 
 void add_to_cmd(char *cmd, const char *s){
@@ -18,8 +19,12 @@ char** input(void){
     int len_cmd = 0;
 
     char * s = getenv("PS1");
-    s = process_PS1(s);
-    snprintf(prompt, MAX_PMT_SIZE, "%s : %s $", s ? s : PS1, cwd);
+
+    if (process_PS1(s ? s : PS1, prompt)<0) {
+        return NULL;
+    }
+
+    snprintf(prompt, MAX_PMT_SIZE, "%s : %s $", s, cwd);
 
     char *p = readline(prompt);
     // add_history(p);
